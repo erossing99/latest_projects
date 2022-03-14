@@ -2,7 +2,7 @@
 
 These are websites that I have programmed during my senior year of college.
 
-###project_1 details:
+### project_1 details:
 
 During this project I was working to create my first full stack web application.
 This website had to include functionality to collect responses to a survey and
@@ -14,7 +14,7 @@ Tools utilized:
 - postgres sql database
 - Heroku
 
-###project_2 details:
+### project_2 details:
 
 This is a project I am currently in the process of developing. This is supposed
 to be a full fledged interactive website that includes all the major functionality
