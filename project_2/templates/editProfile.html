@@ -1,0 +1,40 @@
+<!-- the html for when the user clicks profile button (not implemented rn) in header -->
+{% extends "profile.html" %}
+
+{% block title %} Edit Profile - {{ session['profile']['name'] }} {% endblock %}
+
+{% block header %} 
+<li class="pure-menu-item">
+     <a href="/profile" class="pure-menu-link">
+     <i class="fa fa-duotone fa-user"></i>
+     Profile
+     </a>
+</li>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+<form class="pure-form center_text" method="post" enctype="multipart/form-data" action="{{url_for("upload_profile_photo")}}">
+     <fieldset>
+          <div class="pure-control-group survey_margin">
+            <input type="file" name="image" accept="image/jpeg,image/png" id="image" onchange="showimage(event)" class="center_file_input" required/>
+     </fieldset>
+</form>
+
+
+
+<form class="pure-form">
+     <input class="pure-input-rounded" type="text" name="editUsernameInput" id="editUsernameInput" style="display:none;">
+     <p></p>
+     <button class="button-edit pure-button" for="editUsernameInput" id="editUsernameButton" onclick="displayUsernameInput(event)">
+          <i class="fa fa-duotone fa-pencil"></i>
+          Edit Username
+     </button>
+     <button class="button-edit pure-button" id="saveUsernameButton" onclick="saveUsernameInput(event)" style="display:none;">
+          <i class="fa fa-duotone fa-check"></i>
+          Save Username
+     </button>
+</form>
+
+{% endblock %}

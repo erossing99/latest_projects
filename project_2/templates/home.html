@@ -1,0 +1,28 @@
+{% extends "parent.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<h1>Welcome to Paletteify!</h1>
+
+<div class="pure-g">
+  {% for id in post_ids %}
+    <div class="pure-g center_div survey_margin">
+      <div class="pure-u-1-1" style="display:flex; justify-content: center">
+        <img class="square_image center_image" src="{{url_for("view_post", post_id=id)}}"/>
+      </div>
+      <div class="pure-u-2-5 right_dot">
+        <span class="dot circle" id="dot_1" style="background-color:{{rgb_1_array[loop.index0]}}"></span>
+      </div>
+      <div class="pure-u-1-5 center_dot">
+        <span class="dot circle" id="dot_2" style="background-color:{{rgb_2_array[loop.index0]}}"></span>
+      </div>
+      <div class="pure-u-2-5 left_dot">
+        <span class="dot circle" id="dot_3" style="background-color:{{rgb_3_array[loop.index0]}}"></span>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

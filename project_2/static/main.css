@@ -1,0 +1,63 @@
+.square_image {
+  object-fit: cover;
+  width: 230px;
+  height: 230px;
+}
+
+.circle {
+  height: 60px;
+  width: 60px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+.center_div {
+  margin: auto;
+}
+
+.center_text {
+  text-align: center;
+}
+
+.center_image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center_dot {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.right_dot {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.left_dot {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.survey_margin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.center_file_input {
+  text-align-last: center;
+}
+
+h1,
+h4 {
+  text-align: center;
+}
+
+.button-edit {
+  border-radius: 16px;
+}

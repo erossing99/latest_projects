@@ -1,0 +1,37 @@
+{% extends "parent.html" %}
+
+{% block title %} Consent Page {% endblock %}
+
+{% block content %}
+
+<div class="pure-g">
+  <div class="pure-u-1-1 center">
+    <h1 class="center_text">Hello! Welcome to the Attack on Titan Survey</h1>
+  </div>
+  <div class="pure-u-1-1">
+    <img src="https://wallpaperaccess.com/full/4779927.jpg" alt="AOT Cover" width="500" class="center_image">
+  </div>
+  <div class="pure-u-1-5"></div>
+  <div class="pure-u-3-5 center">
+    <p class="center_text">
+      In this survey we are going to collect your personal opinions regarding the anime Attack on Titan!
+      We wanna know how much you like the show, who's your favorite character, what your favorite arc is,
+      and more! This survey is completely voluntary and will only be performed if you have given your consent.
+    </p>
+  </div>
+  <div class="pure-u-1-5"></div>
+  <div class="pure-u-1-2">
+    <form method="get" action="/survey" class="center_text">
+      <button type="submit">Consent</button>
+    </form>
+  </div>
+  <div class="pure-u-1-2">
+    <form method="get" action="/decline" class="center_text">
+      <button type="submit">Decline</button>
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}

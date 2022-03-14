@@ -1,0 +1,79 @@
+{% extends "parent.html" %}
+
+{% block title %} AOT Survey {% endblock %}
+
+{% block content %}
+
+<div class="pure-g">
+  <div class="pure-u-1-1 center">
+    <h1 class="center_text">Attack on Titan Survey</h1>
+  </div>
+</div>
+<form class="pure-form center_text" action="{{ url_for('survey_post') }}" method="post">
+  <fieldset>
+    <div class="pure-control-group">
+      <h4>What's your name?</h4>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="enter name" required="" minlength="3" class="pure-input-1-4"/>
+    </div>
+    <div class="pure-control-group">
+      <h4>What season of AOT are you currently on?</h4>
+      <label for="checkbox-radio-option-one" class="pure-radio">
+        <input type="radio" id="checkbox-radio-option-one" name="radio" value="1"/> Season 1
+      </label>
+      <label for="checkbox-radio-option-two" class="pure-radio">
+        <input type="radio" id="checkbox-radio-option-one" name="radio" value="2"/> Season 2
+      </label>
+      <label for="checkbox-radio-option-three" class="pure-radio">
+        <input type="radio" id="checkbox-radio-option-one" name="radio" value="3"/> Season 3
+      </label>
+      <label for="checkbox-radio-option-four" class="pure-radio">
+        <input type="radio" id="checkbox-radio-option-one" name="radio" value="4"/> Season 4
+      </label>
+    </div>
+    <div class="pure-control-group">
+      <h4>Who is your favorite character in AOT?</h4>
+      <label for="fav_character">Character</label>
+      <select id="fav_character" name="fav_character" class="pure-input">
+        <option>Eren Yeager</option>
+        <option>Mikasa Ackerman</option>
+        <option>Armin Arlert</option>
+        <option>Captain Levi</option>
+        <option>Jean Kirstein</option>
+        <option>Connie Springer</option>
+        <option>Sasha Braus</option>
+        <option>Commander Erwin</option>
+        <option>Hange Zoe</option>
+      </select>
+    </div>
+    <div class="pure-control-group pure-u-1-1">
+      <h4>If you are fully caught up on AOT check the box below:</h4>
+      <label for="checkbox_conditional" class="pure-checkbox">
+        <input type="checkbox" id="checkbox_conditional" name="current" value="current" onclick="showQuestion()"/> I'm fully caught up (and fully accept potential spoilers)
+      </label>
+    </div>
+    <div class="pure-control-group" id="conditional" style="display:none; margin: 1em">
+      <h4>Do you think Eren's attack on the rest of the world is justified?</h4>
+      <textarea class="pure-input" name="justification"></textarea>
+    </div>
+    <div class="pure-controls">
+      <button type="submit" class="pure-button pure-input-1-4 pure-button-primary">Next</button>
+    </div>
+  </fieldset>
+</form>
+
+<script type="text/javascript">
+  function showQuestion(){
+    var checkbox = document.getElementById("checkbox_conditional");
+    var condition_input = document.getElementById("conditional");
+    if (checkbox.checked){
+      condition_input.style.display = "block";
+    }
+    else{
+      condition_input.style.display = "none";
+    }
+  }
+
+</script>
+
+{% endblock %}
